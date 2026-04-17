@@ -94,20 +94,20 @@ resource "azurerm_subnet_network_security_group_association" "nsg_assoc" {
 }
 
 resource "azurerm_linux_virtual_machine" "vm" {
-  name                  = var.vm_name
-  resource_group_name   = azurerm_resource_group.rg.name
-  location              = azurerm_resource_group.rg.location
-  network_interface_ids = [azurerm_network_interface.nic.id]
-  size                  = "Standard_B2s_v2"
-  admin_username        = var.admin_username
-  admin_password = var.admin_password
+  name                            = var.vm_name
+  resource_group_name             = azurerm_resource_group.rg.name
+  location                        = azurerm_resource_group.rg.location
+  network_interface_ids           = [azurerm_network_interface.nic.id]
+  size                            = "Standard_B2s_v2"
+  admin_username                  = var.admin_username
+  admin_password                  = var.admin_password
   disable_password_authentication = false
 
 
-#   admin_ssh_key {
-#     username   = "azureuser"
-#     public_key = file("~/.ssh/id_rsa.pub") # make sure this exists
-#   }
+  #   admin_ssh_key {
+  #     username   = "azureuser"
+  #     public_key = file("~/.ssh/id_rsa.pub") # make sure this exists
+  #   }
 
   os_disk {
     caching              = "ReadWrite"
@@ -126,19 +126,19 @@ resource "azurerm_linux_virtual_machine" "vm" {
   }
 
 
-provisioner "remote-exec" {
-  connection {
-    type        = "ssh"
-    host        = azurerm_public_ip.pip.ip_address
-    user     = var.admin_username
+  provisioner "remote-exec" {
+    connection {
+      type     = "ssh"
+      host     = azurerm_public_ip.pip.ip_address
+      user     = var.admin_username
       password = var.admin_password
-  }
+    }
 
-  inline = [
-    "sudo apt update -y",
-    "sudo apt install nginx -y",
-    "sudo systemctl start nginx",
-    "sudo systemctl enable nginx"
-  ]
-}
+    inline = [
+      "sudo apt update -y",
+      "sudo apt install nginx -y",
+      "sudo systemctl start nginx",
+      "sudo systemctl enable nginx"
+    ]
+  }
 }

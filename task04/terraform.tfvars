@@ -21,4 +21,4 @@ vm_name = "cmaz-lye32no2-mod4-vm"
 nsg_name = "cmaz-lye32no2-mod4-nsg"
 
 admin_username = "azureuser"
-admin_password = "Server@12345"
+# admin_password = "Server@12345"

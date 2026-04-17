@@ -44,17 +44,17 @@ variable "vm_name" {
 }
 
 variable "nsg_name" {
-  type = string
+  type        = string
   description = "this is name of network security group"
 }
 
 variable "admin_username" {
-  type = string
+  type        = string
   description = "this is username for admin access"
 }
 
 variable "admin_password" {
-  type = string
-  sensitive = true
+  type        = string
+  sensitive   = true
   description = "this is password for admin access"
 }
