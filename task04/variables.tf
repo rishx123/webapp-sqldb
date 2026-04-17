@@ -75,5 +75,6 @@ variable "https_rule_name" {
 
 }
 variable "creator_tag" {
+  type        = string
   description = "Creator tag"
 }
