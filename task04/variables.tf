@@ -53,6 +53,10 @@ variable "vm_username" {
   description = "this is username for vm access"
 }
 
+variable "dns_name" {
+  type        = string
+  description = "this is dns name for public ip"
+}
 variable "vm_password" {
   type        = string
   sensitive   = true

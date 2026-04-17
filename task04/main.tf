@@ -28,7 +28,7 @@ resource "azurerm_public_ip" "pip" {
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   allocation_method   = "Static"
-  domain_name_label   = "cmaz-lye32no2-mod4-nginx"
+  domain_name_label   = var.dns_name
 
   tags = {
     Creator = "rishitha_sj@epam.com"
@@ -130,8 +130,8 @@ resource "azurerm_linux_virtual_machine" "vm" {
     connection {
       type     = "ssh"
       host     = azurerm_public_ip.pip.ip_address
-      user     = var.admin_username
-      password = var.admin_password
+      user     = var.vm_username
+      password = var.vm_password
     }
 
     inline = [
