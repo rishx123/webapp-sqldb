@@ -78,3 +78,7 @@ variable "creator_tag" {
   type        = string
   description = "Creator tag"
 }
+variable "ip_conf_name" {
+  type        = string
+  description = "this is name of ip configuration"
+}
