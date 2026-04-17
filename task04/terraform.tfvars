@@ -26,4 +26,5 @@ vm_username = "azureuser"
 ssh_rule_name   = "AllowSSH"
 https_rule_name = "AllowHTTPS"
 
-dns_name = "cmaz-lye32no2-mod4-nginx"
+dns_name    = "cmaz-lye32no2-mod4-nginx"
+creator_tag = "rishitha_sj@epam.com"

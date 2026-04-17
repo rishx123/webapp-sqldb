@@ -74,3 +74,6 @@ variable "https_rule_name" {
   description = "this is name of https rule"
 
 }
+variable "creator_tag" {
+  description = "Creator tag"
+}

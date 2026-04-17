@@ -2,7 +2,7 @@ resource "azurerm_resource_group" "rg" {
   name     = var.resource_group_name
   location = var.location
   tags = {
-    Creator = "rishitha_sj@epam.com"
+    Creator = var.creator_tag
   }
 }
 
@@ -12,7 +12,7 @@ resource "azurerm_virtual_network" "vnet" {
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   tags = {
-    Creator = "rishitha_sj@epam.com"
+    Creator = var.creator_tag
   }
 }
 
@@ -31,7 +31,7 @@ resource "azurerm_public_ip" "pip" {
   domain_name_label   = var.dns_name
 
   tags = {
-    Creator = "rishitha_sj@epam.com"
+    Creator = var.creator_tag
   }
 
 }
@@ -47,7 +47,7 @@ resource "azurerm_network_interface" "nic" {
     public_ip_address_id          = azurerm_public_ip.pip.id
   }
   tags = {
-    Creator = "rishitha_sj@epam.com"
+    Creator = var.creator_tag
   }
 
 }
@@ -57,7 +57,7 @@ resource "azurerm_network_security_group" "nsg" {
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   tags = {
-    Creator = "rishitha_sj@epam.com"
+    Creator = var.creator_tag
   }
 }
 resource "azurerm_network_security_rule" "ssh" {
@@ -122,7 +122,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
     version   = "latest"
   }
   tags = {
-    Creator = "rishitha_sj@epam.com"
+    Creator = var.creator_tag
   }
 
 
