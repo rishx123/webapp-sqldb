@@ -68,5 +68,5 @@ variable "ssh_rule_name" {
 variable "https_rule_name" {
   type        = string
   description = "this is name of https rule"
-  
+
 }
