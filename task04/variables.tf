@@ -48,13 +48,25 @@ variable "nsg_name" {
   description = "this is name of network security group"
 }
 
-variable "admin_username" {
+variable "vm_username" {
   type        = string
-  description = "this is username for admin access"
+  description = "this is username for vm access"
 }
 
-variable "admin_password" {
+variable "vm_password" {
   type        = string
   sensitive   = true
-  description = "this is password for admin access"
+  description = "this is password for vm access"
+}
+
+variable "ssh_rule_name" {
+  type        = string
+  description = "this is name of ssh rule"
+
+}
+
+variable "https_rule_name" {
+  type        = string
+  description = "this is name of https rule"
+  
 }

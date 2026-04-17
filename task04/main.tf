@@ -61,7 +61,7 @@ resource "azurerm_network_security_group" "nsg" {
   }
 }
 resource "azurerm_network_security_rule" "ssh" {
-  name                        = "AllowSSH"
+  name                        = var.ssh_rule_name
   priority                    = 1000
   direction                   = "Inbound"
   access                      = "Allow"
@@ -75,7 +75,7 @@ resource "azurerm_network_security_rule" "ssh" {
 
 }
 resource "azurerm_network_security_rule" "http" {
-  name                        = "AllowHTTP"
+  name                        = var.https_rule_name
   priority                    = 1001
   direction                   = "Inbound"
   access                      = "Allow"
@@ -99,8 +99,8 @@ resource "azurerm_linux_virtual_machine" "vm" {
   location                        = azurerm_resource_group.rg.location
   network_interface_ids           = [azurerm_network_interface.nic.id]
   size                            = "Standard_B2s_v2"
-  admin_username                  = var.admin_username
-  admin_password                  = var.admin_password
+  admin_username                  = var.vm_username
+  admin_password                  = var.vm_password
   disable_password_authentication = false
 
 

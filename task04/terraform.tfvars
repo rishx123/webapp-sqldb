@@ -20,5 +20,8 @@ vm_name = "cmaz-lye32no2-mod4-vm"
 
 nsg_name = "cmaz-lye32no2-mod4-nsg"
 
-admin_username = "azureuser"
-# admin_password = "Server@12345"
+vm_username = "azureuser"
+# vm_password = "Server@12345"
+
+ssh_rule_name = "AllowSSH"
+https_rule_name = "AllowHTTPS"
