@@ -1,6 +1,6 @@
 name_prefix = "cmaz-lye32no2-mod6"
 
-location = "westeurope"
+location = "North Europe"
 
 tags = {
   Creator = "rishitha_sj@epam.com"
