@@ -1,9 +1,9 @@
 locals {
-  name_prefix = "cmaz-lye32no2-mod6"
+  # Core names
+  rg_name         = format("%s-rg", var.name_prefix)
+  sql_server_name = format("%s-sql", var.name_prefix)
+  sql_db_name     = format("%s-sql-db", var.name_prefix)
+  asp_name        = format("%s-asp", var.name_prefix)
+  app_name        = format("%s-app", var.name_prefix)
 
-  rg_name         = "${local.name_prefix}-rg"
-  sql_server_name = "${local.name_prefix}-sql"
-  sql_db_name     = "${local.name_prefix}-sql-db"
-  asp_name        = "${local.name_prefix}-asp"
-  app_name        = "${local.name_prefix}-app"
 }
