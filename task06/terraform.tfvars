@@ -7,7 +7,7 @@ tags = {
 }
 
 # Existing Key Vault
-key_vault_name = "cmaz-lye32no2-mod6-kv-rg-kv"
+key_vault_name = "cmaz-lye32no2-mod6-kv"
 key_vault_rg   = "cmaz-lye32no2-mod6-kv-rg"
 
 # SQL
